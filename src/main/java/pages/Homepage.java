@@ -21,7 +21,7 @@ public class Homepage extends BasePage {
     public boolean verifyHomepageTitle(){
         try{
             waitforElementVisible(homeLink);
-            return driver.getTitle() == "ToolsQA";
+            return driver.getTitle().equals("ToolsQA");
         }catch (Exception e){
             return false;
         }

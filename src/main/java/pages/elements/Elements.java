@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class Elements extends BasePage {
 
     By elementsHeader = By.cssSelector("div.main-header");
+    By elementTextBox = By.xpath("//span[contains(text(),'Text Box')]");
+
 
     public Elements(WebDriver driver) {
         super(driver);
@@ -15,9 +17,15 @@ public class Elements extends BasePage {
     public boolean verifyElementsPageHeader(){
         try{
             waitforElementVisible(elementsHeader);
-            return driver.findElement(elementsHeader).getText() == "ToolsQA";
+            String str = driver.findElement(elementsHeader).getText();
+            return driver.findElement(elementsHeader).getText().equals("Elements");
         }catch (Exception e){
             return false;
         }
+    }
+
+    public void clickOnElementTextBox(){
+        waitforElementClickable(elementTextBox,wt.longWait);
+        driver.findElement(elementTextBox).click();
     }
 }
