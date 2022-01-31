@@ -19,7 +19,7 @@ public class VerifyTextBoxPage extends BaseTest {
         elements.clickOnElementTextBox();
 
         TextBox textBox = new TextBox(driver);
-        textBox.verifyElementsPageHeader();
+        textBox.verifyTextBoxPageHeader();
         /*textBox.typeFullName("Satish Mainkatte");
         textBox.typeEmail("smainkatte2022@test.lcl");
         textBox.typeCurrentAddress("Maharashtra, India");

@@ -22,7 +22,7 @@ public class TextBox extends BasePage {
         super(driver);
     }
 
-    public boolean verifyElementsPageHeader(){
+    public boolean verifyTextBoxPageHeader(){
         try{
             waitforElementVisible(textboxHeader);
             return driver.findElement(textboxHeader).getText().equals("Text Box");
