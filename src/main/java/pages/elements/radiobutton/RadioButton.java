@@ -6,47 +6,31 @@ import org.openqa.selenium.WebDriver;
 
 public class RadioButton extends BasePage {
 
-    By radiobuttonHeader = By.cssSelector("div.main-header");
-    By yesRadioButton = By.xpath("*//input[@type='radio' and@id='yesRadio']");
-    By noRadioButton = By.id("noRadio");
-    By impressiveRadioButton = By.id("impressiveRadio");
-    By selectedRadioOutput = By.cssSelector("span.text-success");
-
     public RadioButton(WebDriver driver) {
         super(driver);
     }
 
-    public boolean verifyRadioButtonPageHeader(){
-        try{
-            waitforElementVisible(radiobuttonHeader);
-            return driver.findElement(radiobuttonHeader).getText().equals("Radio Button");
-        }catch (Exception e){
-            return false;
+    private final By RADIO_BUTTON = By.xpath("//span[text()='Radio Button']");
+    private final String RADIO_OPTION = "//label[text()='option']";
+    private final By VALIDATE_TEXT = By.xpath("//p[@class='mt-3']");
+
+    public boolean selectOptionRadioButton() {
+        if (confirmElementIsVisible(RADIO_BUTTON)){
+            return clickElement(RADIO_BUTTON);
         }
+        return false;
     }
-    public void selectYesRadioButton(){
-        try {
-            driver.findElement(yesRadioButton).isDisplayed();
-            if(!driver.findElement(yesRadioButton).isSelected()) {
-                clickElementByJS(yesRadioButton);
-            }
-        }catch (Exception e){
-            throw e;
-        }
+
+    public boolean selectRadioOption(String option) {
+        return clickElement(replaceElement(RADIO_OPTION, "option", option));
     }
-    public void selectImpressiveRadioButton(){
-        waitforElementClickable(impressiveRadioButton, wt.longWait);
-        driver.findElement(impressiveRadioButton).click();
-    }
-    public String verifySelectedRadioButtonOutput(){
-        waitforElementClickable(selectedRadioOutput, wt.longWait);
-        return driver.findElement(selectedRadioOutput).getText().trim();
-    }
-    public boolean verifySelectedCheckbox(By locator){
-        try {
-            return verifySelectedRadioButtonOutput().equals("Yes") || verifySelectedRadioButtonOutput().equals("Impressive");
-        }catch (Exception e){
-            return false;
-        }
+
+    public boolean validateResult(String option) {
+        selectRadioOption(option);
+        String str = grabText(VALIDATE_TEXT);
+        if (str.equals("You have selected" + " " + option)) {
+            return true;
+        } else return false;
+
     }
 }
