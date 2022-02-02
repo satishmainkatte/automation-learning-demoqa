@@ -6,6 +6,8 @@ import pages.elements.Elements;
 import pages.elements.radiobutton.RadioButton;
 import setup.BaseTest;
 
+import static org.junit.Assert.assertTrue;
+
 public class VerifyRadioButtonPage extends BaseTest {
     @Test
     public void test1() {
@@ -16,10 +18,7 @@ public class VerifyRadioButtonPage extends BaseTest {
         elements.clickOnElementRadioButton();
 
         RadioButton radioButton = new RadioButton(driver);
-        radioButton.verifyRadioButtonPageHeader();
-        radioButton.selectYesRadioButton();
-        radioButton.verifySelectedRadioButtonOutput();
-        radioButton.selectImpressiveRadioButton();
-        radioButton.verifySelectedRadioButtonOutput();
+        assertTrue("Unable to click Radio Option", radioButton.selectOptionRadioButton());
+        assertTrue("Unable to click Radio Option", radioButton.validateResult("Impressive"));
     }
 }
