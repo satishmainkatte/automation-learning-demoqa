@@ -9,6 +9,8 @@ public class Elements extends BasePage {
     By elementsHeader = By.cssSelector("div.main-header");
     By elementTextBox = By.xpath("//span[contains(text(),'Text Box')]");
     By elementCheckBox = By.xpath("//span[contains(text(),'Check Box')]");
+    By elementRadioButton = By.xpath("//span[contains(text(),'Radio Button')]");
+
 
 
     public Elements(WebDriver driver) {
@@ -26,11 +28,15 @@ public class Elements extends BasePage {
     }
 
     public void clickOnElementTextBox(){
-        waitforElementClickable(elementTextBox,wt.longWait);
+        waitforElementClickable(elementTextBox, wt.longWait);
         driver.findElement(elementTextBox).click();
     }
     public void clickOnElementCheckBox(){
-        waitforElementClickable(elementCheckBox,wt.longWait);
+        waitforElementClickable(elementCheckBox, wt.longWait);
         driver.findElement(elementCheckBox).click();
+    }
+    public void clickOnElementRadioButton(){
+        waitforElementClickable(elementRadioButton, wt.longWait);
+        driver.findElement(elementRadioButton).click();
     }
 }

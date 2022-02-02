@@ -32,5 +32,9 @@ public class BasePage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(locator));
         waitforElementVisible(locator);
     }
+    public void clickElementByJS(By locator){
+        WebElement element = new WebDriverWait(driver, wt.extraWait).until(ExpectedConditions.elementToBeClickable(locator));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+    }
 
 }
