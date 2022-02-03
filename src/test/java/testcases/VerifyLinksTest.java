@@ -20,5 +20,10 @@ public class VerifyLinksTest extends BaseTest {
         Links lkn = new Links(driver);
         assertTrue("Unable to click on Option Links", lkn.selectOptionLinks());
         assertTrue("Unable to click on link", lkn.checkLink());
+        assertTrue("Unable to click on prev tab",lkn.selectPreviousTab());
+        String[] str = {"Moved","Created"};
+        lkn.selectApiLinks(str);
+
+
     }
 }
