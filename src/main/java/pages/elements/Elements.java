@@ -10,6 +10,7 @@ public class Elements extends BasePage {
     By elementTextBox = By.xpath("//span[contains(text(),'Text Box')]");
     By elementCheckBox = By.xpath("//span[contains(text(),'Check Box')]");
     By elementRadioButton = By.xpath("//span[contains(text(),'Radio Button')]");
+    By elementBrokenLinksImages = By.xpath("//span[contains(text(),'Broken Links - Images')]");
 
 
 
@@ -38,5 +39,9 @@ public class Elements extends BasePage {
     public void clickOnElementRadioButton(){
         waitforElementClickable(elementRadioButton, wt.longWait);
         driver.findElement(elementRadioButton).click();
+    }
+    public void clickOnElementBrokenLinksImages(){
+        waitforElementClickable(elementBrokenLinksImages, wt.longWait);
+        driver.findElement(elementBrokenLinksImages).click();
     }
 }

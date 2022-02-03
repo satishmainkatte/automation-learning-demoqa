@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.WaitTimers;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.Duration;
 
 public class BasePage {
@@ -36,5 +38,22 @@ public class BasePage {
         WebElement element = new WebDriverWait(driver, wt.extraWait).until(ExpectedConditions.elementToBeClickable(locator));
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
     }
-
+    public void verifyURLLinks(String urlLink)
+    {
+        try
+        {
+            URL url = new URL(urlLink);
+            HttpURLConnection httpURLConnect=(HttpURLConnection)url.openConnection();
+            httpURLConnect.setConnectTimeout(5000);
+            httpURLConnect.connect();
+            if(httpURLConnect.getResponseCode()>=400)
+            {
+                System.out.println("HTTP STATUS - " + httpURLConnect.getResponseMessage() + "is a broken link");
+            }else{
+                System.out.println("HTTP STATUS - " + httpURLConnect.getResponseMessage());
+            }
+        }catch (Exception e) {
+            System.out.println("Unable to verify HTTP STATUS");
+        }
+    }
 }
