@@ -8,7 +8,7 @@ import setup.BaseTest;
 
 import static org.junit.Assert.assertTrue;
 
-public class VerifyButtonsTest extends BaseTest {
+public class VerifyButtonsPageTest extends BaseTest {
 
     @Test
     public void buttons() {

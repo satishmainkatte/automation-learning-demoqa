@@ -4,7 +4,7 @@ import org.junit.Test;
 import pages.Homepage;
 import setup.BaseTest;
 
-public class VerifyHomepage extends BaseTest {
+public class VerifyHomepageTest extends BaseTest {
 
     @Test
     public void test1() {

@@ -5,7 +5,7 @@ import pages.Homepage;
 import pages.elements.Elements;
 import setup.BaseTest;
 
-public class VerifyElementsPage extends BaseTest {
+public class VerifyElementsPageTest extends BaseTest {
     @Test
     public void test1() {
         Homepage home = new Homepage(driver);

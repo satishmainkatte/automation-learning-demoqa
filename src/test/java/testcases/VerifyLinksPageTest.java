@@ -8,7 +8,7 @@ import setup.BaseTest;
 
 import static org.junit.Assert.assertTrue;
 
-public class VerifyLinksTest extends BaseTest {
+public class VerifyLinksPageTest extends BaseTest {
     @Test
     public void links() throws InterruptedException {
         Homepage home = new Homepage(driver);

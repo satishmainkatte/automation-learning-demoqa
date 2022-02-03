@@ -8,7 +8,7 @@ import setup.BaseTest;
 
 import static org.junit.Assert.assertTrue;
 
-public class VerifyTextBoxPage extends BaseTest {
+public class VerifyTextBoxPageTest extends BaseTest {
 
     @Test
     public void test1() {
