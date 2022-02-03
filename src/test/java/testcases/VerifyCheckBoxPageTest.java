@@ -6,7 +6,7 @@ import pages.elements.Elements;
 import pages.elements.checkbox.CheckBox;
 import setup.BaseTest;
 
-public class VerifyCheckBoxPage extends BaseTest {
+public class VerifyCheckBoxPageTest extends BaseTest {
     @Test
     public void test1() {
         Homepage home = new Homepage(driver);

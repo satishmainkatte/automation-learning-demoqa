@@ -8,7 +8,7 @@ import setup.BaseTest;
 
 import static org.junit.Assert.assertTrue;
 
-public class VerifyRadioButtonPage extends BaseTest {
+public class VerifyRadioButtonPageTest extends BaseTest {
     @Test
     public void test1() {
         Homepage home = new Homepage(driver);
