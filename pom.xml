@@ -11,6 +11,11 @@
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
+        <webdrivermanager.version>5.0.3</webdrivermanager.version>
+        <chromedriver.version>4.1.0</chromedriver.version>
+        <firefoxdriver.version>4.1.0</firefoxdriver.version>
+        <iedriver.version>4.1.0</iedriver.version>
+        <edgedriver.version>4.1.0</edgedriver.version>
     </properties>
 
     <dependencies>
@@ -36,6 +41,34 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+        <!--webdrivermanager plugin-->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+        <!--webdriver dependencies-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${chromedriver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>${firefoxdriver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-ie-driver</artifactId>
+            <version>${iedriver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-edge-driver</artifactId>
+            <version>${edgedriver.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
