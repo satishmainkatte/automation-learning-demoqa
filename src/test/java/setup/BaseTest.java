@@ -10,7 +10,8 @@ public class BaseTest {
     @BeforeClass
     public static void entryLoader(){
         System.out.println("Webdriver setup going on...");
-        driver = WebDriverManagerTest.browserDriverSetup("Chrome");
+        WebDriverManagerTest webDriverManagerTest = new WebDriverManagerTest("Chrome");
+        driver = webDriverManagerTest.browserDriverSetup();
         System.out.println("Webdiver created!!");
         driver.manage().window().maximize();
         driver.get("https://demoqa.com/");
