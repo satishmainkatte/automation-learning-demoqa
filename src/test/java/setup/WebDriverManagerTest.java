@@ -13,8 +13,13 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 
 public class WebDriverManagerTest {
 
-    public static WebDriver browserDriverSetup(String browserName) {
+    String browserName;
 
+    WebDriverManagerTest(String browserName){
+        this.browserName=browserName;
+    }
+
+    public WebDriver browserDriverSetup() {
         try{
             switch (browserName.toLowerCase()) {
                 case "chrome" -> {
@@ -46,7 +51,6 @@ public class WebDriverManagerTest {
             System.out.println("Unable to setup WebDriver instance!");
             throw e;
         }
-
     }
 }
 
