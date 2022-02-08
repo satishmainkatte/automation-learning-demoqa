@@ -13,44 +13,57 @@ public class Elements extends BasePage {
     By elementButton = By.xpath("//span[text()='Buttons']");
     By elementLinkButton = By.xpath("//span[text()='Links']");
     By elementBrokenLinksImages = By.xpath("//span[contains(text(),'Broken Links - Images')]");
+    By elementDynamicProperties = By.xpath("//span[contains(text(),'Dynamic Properties')]");
 
 
     public Elements(WebDriver driver) {
         super(driver);
     }
 
-    public boolean verifyElementsPageHeader(){
-        try{
+    public boolean verifyElementsPageHeader() {
+        try {
             waitforElementVisible(elementsHeader);
             String str = driver.findElement(elementsHeader).getText();
             return driver.findElement(elementsHeader).getText().equals("Elements");
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
-    public void clickOnElementTextBox(){
+    public void clickOnElementTextBox() {
         waitforElementClickable(elementTextBox, wt.longWait);
         driver.findElement(elementTextBox).click();
     }
-    public void clickOnElementCheckBox(){
+
+    public void clickOnElementCheckBox() {
         waitforElementClickable(elementCheckBox, wt.longWait);
         driver.findElement(elementCheckBox).click();
     }
-    public void clickOnElementRadioButton(){
+
+    public void clickOnElementRadioButton() {
         waitforElementClickable(elementRadioButton, wt.longWait);
         driver.findElement(elementRadioButton).click();
     }
-    public void clickOnElementButton(){
-        waitforElementClickable(elementButton,wt.longWait);
+
+    public void clickOnElementButton() {
+        waitforElementClickable(elementButton, wt.longWait);
         driver.findElement(elementButton).click();
     }
-    public void clickOnElementLink(){
-        waitforElementClickable(elementLinkButton,wt.longWait);
+
+    public void clickOnElementLink() {
+        waitforElementClickable(elementLinkButton, wt.longWait);
         driver.findElement(elementLinkButton).click();
     }
-    public void clickOnElementBrokenLinksImages(){
+
+    public void clickOnElementBrokenLinksImages() {
         waitforElementClickable(elementBrokenLinksImages, wt.longWait);
         driver.findElement(elementBrokenLinksImages).click();
     }
+    public void ClickonElementsDynamicProperties(){
+        scrolltoElement(elementDynamicProperties);
+        waitforElementClickable(elementDynamicProperties, wt.longWait);
+        driver.findElement(elementDynamicProperties).click();
+    }
 }
+
+
