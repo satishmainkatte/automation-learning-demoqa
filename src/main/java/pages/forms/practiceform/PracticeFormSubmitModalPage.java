@@ -3,9 +3,6 @@ package pages.forms.practiceform;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.Arrays;
 
 public class PracticeFormSubmitModalPage extends BasePage {
 
@@ -21,7 +18,6 @@ public class PracticeFormSubmitModalPage extends BasePage {
     public boolean verifyPracticeFormSubmitModalPageHeader(){
         try{
             waitforElementVisible(practiceFormSubmitModalHeader);
-            String str = driver.findElement(practiceFormSubmitModalHeader).getText();
             return driver.findElement(practiceFormSubmitModalHeader).getText().equals("Thanks for submitting the form");
         }catch (Exception e){
             return false;
