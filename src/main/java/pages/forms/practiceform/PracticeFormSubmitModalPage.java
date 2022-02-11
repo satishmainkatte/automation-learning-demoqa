@@ -9,8 +9,8 @@ public class PracticeFormSubmitModalPage extends BasePage {
     private final By practiceFormSubmitModalHeader = By.id("example-modal-sizes-title-lg");
     private final By practiceFormSubmitModalCloseButton = By.id("closeLargeModal");
     private final By practiceFormSubmitModalGridRows = By.xpath("//table/tbody/tr");
-    String practiceFormSubmitModalGridColumnLabel = "//table/tbody/tr[row_num]/td[1]";
-    String practiceFormSubmitModalGridColumnValues = "//table/tbody/tr[row_num]/td[2]";
+    private final String practiceFormSubmitModalGridColumnLabel = "//table/tbody/tr[row_num]/td[1]";
+    private final String practiceFormSubmitModalGridColumnValues = "//table/tbody/tr[row_num]/td[2]";
 
     public PracticeFormSubmitModalPage(WebDriver driver) {
         super(driver);
