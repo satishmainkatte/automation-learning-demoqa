@@ -15,11 +15,9 @@ public class Elements extends BasePage {
     By elementBrokenLinksImages = By.xpath("//span[contains(text(),'Broken Links - Images')]");
     By elementDynamicProperties = By.xpath("//span[contains(text(),'Dynamic Properties')]");
 
-
     public Elements(WebDriver driver) {
         super(driver);
     }
-
     public boolean verifyElementsPageHeader() {
         try {
             waitforElementVisible(elementsHeader);
@@ -29,32 +27,26 @@ public class Elements extends BasePage {
             return false;
         }
     }
-
     public void clickOnElementTextBox() {
         waitforElementClickable(elementTextBox, wt.longWait);
         driver.findElement(elementTextBox).click();
     }
-
     public void clickOnElementCheckBox() {
         waitforElementClickable(elementCheckBox, wt.longWait);
         driver.findElement(elementCheckBox).click();
     }
-
     public void clickOnElementRadioButton() {
         waitforElementClickable(elementRadioButton, wt.longWait);
         driver.findElement(elementRadioButton).click();
     }
-
     public void clickOnElementButton() {
         waitforElementClickable(elementButton, wt.longWait);
         driver.findElement(elementButton).click();
     }
-
     public void clickOnElementLink() {
         waitforElementClickable(elementLinkButton, wt.longWait);
         driver.findElement(elementLinkButton).click();
     }
-
     public void clickOnElementBrokenLinksImages() {
         waitforElementClickable(elementBrokenLinksImages, wt.longWait);
         driver.findElement(elementBrokenLinksImages).click();
@@ -65,5 +57,3 @@ public class Elements extends BasePage {
         driver.findElement(elementDynamicProperties).click();
     }
 }
-
-

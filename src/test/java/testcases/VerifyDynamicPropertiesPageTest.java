@@ -11,7 +11,7 @@ import setup.BaseTest;
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertTrue;
 
-public class VerifyDynamicPropertiesTest extends BaseTest {
+public class VerifyDynamicPropertiesPageTest extends BaseTest {
     @Test
     public void test1() {
         Homepage home = new Homepage(driver);
@@ -22,8 +22,8 @@ public class VerifyDynamicPropertiesTest extends BaseTest {
 
         DynamicProperties dynamicProperties=new DynamicProperties(driver);
 
-       String text=dynamicProperties.verifyDynamicpropertiesheader();
-       String expectedresult= "Dynamic Properties";
+        String text=dynamicProperties.verifyDynamicpropertiesheader();
+        String expectedresult= "Dynamic Properties";
         Assert.assertEquals(text,expectedresult );
 
         dynamicProperties.verifyAttributeValue();
