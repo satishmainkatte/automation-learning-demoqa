@@ -8,14 +8,9 @@ import org.openqa.selenium.WebElement;
 public class Uploadanddownload extends BasePage {
 
     private final By UploadAndDownload = By.xpath("//span[contains(text(),'Upload and Download')]");
-    By UploadAndDownloadHeader = By.cssSelector("div.main-header");
+    private By UploadAndDownloadHeader = By.cssSelector("div.main-header");
     private final By Download_Button = By.id("downloadButton");
     private final By Upload_Button = By.id("uploadFile");
-
-
-    public By getUpload_Button() {
-        return Upload_Button;
-    }
 
     public Uploadanddownload(WebDriver driver) {
         super(driver);
@@ -27,7 +22,6 @@ public class Uploadanddownload extends BasePage {
         }
         return false;
     }
-
 
     public boolean verifyUploadAndDownloadPageHeader() {
         try {

@@ -20,9 +20,9 @@ public class VerifyUploadAndDownloadPageTest extends BaseTest {
 
         Uploadanddownload upl = new Uploadanddownload(driver);
         assertTrue("Unable to select element upload and download option", upl.selectUploadAndDownload());
-        assertTrue("Unable to see Upload and Download text", upl.verifyUploadAndDownloadPageHeader());
-        assertTrue("Unable to select download option", upl.downloadClickButton());
-        assertTrue("Unable to select download option", upl.uploadFile());
+        assertTrue("Unable to verify Upload and Download text", upl.verifyUploadAndDownloadPageHeader());
+        assertTrue("Unable to download file", upl.downloadClickButton());
+        assertTrue("Unable to upload file", upl.uploadFile());
 
 
 
