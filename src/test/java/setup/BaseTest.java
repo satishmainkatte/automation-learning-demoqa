@@ -2,10 +2,14 @@ package setup;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
     public static WebDriver driver;
+
+    @Rule
+    public ScreenShotManagerTest failure = new ScreenShotManagerTest(driver);
 
     @BeforeClass
     public static void entryLoader(){
@@ -20,8 +24,9 @@ public class BaseTest {
     @AfterClass
     public static void exitLoader(){
         System.out.println("Closing Webdiver...");
+        if (driver != null){
         driver.close();
-        driver.quit();
+        driver.quit();}
         System.out.println("Webdriver object destroyed!");
     }
 }
