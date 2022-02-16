@@ -13,6 +13,7 @@ public class Elements extends BasePage {
     By elementButton = By.xpath("//span[text()='Buttons']");
     By elementLinkButton = By.xpath("//span[text()='Links']");
     By elementBrokenLinksImages = By.xpath("//span[contains(text(),'Broken Links - Images')]");
+    By elementUploadAndDownload = By.xpath("//span[contains(text(),'Upload and Download')]");
     By elementDynamicProperties = By.xpath("//span[contains(text(),'Dynamic Properties')]");
 
     public Elements(WebDriver driver) {
@@ -50,6 +51,13 @@ public class Elements extends BasePage {
     public void clickOnElementBrokenLinksImages() {
         waitforElementClickable(elementBrokenLinksImages, wt.longWait);
         driver.findElement(elementBrokenLinksImages).click();
+    }
+
+    public void clickOnUploadAndDownload() {
+        waitforElementClickable(elementUploadAndDownload, wt.longWait);
+        scrolltoElement(elementUploadAndDownload);
+        driver.findElement(elementUploadAndDownload).click();
+
     }
     public void ClickonElementsDynamicProperties(){
         scrolltoElement(elementDynamicProperties);
